@@ -22,8 +22,8 @@ function CreateForm() {
   return (
     <div>
       {
-        form == 1 ? <ApplicationCreateForm next={clickNext} /> : 
-        form == 2 ? <ApplicationDetailsForm next={clickNext} prev={clickPrev}/> :
+        form == 1 ? <ApplicationDetailsForm next={clickNext} /> : 
+        form == 2 ? <ApplicationCreateForm next={clickNext} prev={clickPrev}/> :
         form == 3 ? <ApplicationSelectInstitutions submit={clickSubmit} prev={clickPrev}/> :
         <></>
       }
