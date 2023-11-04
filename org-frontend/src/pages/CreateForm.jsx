@@ -6,6 +6,7 @@ import ApplicationSelectInstitutions from '../components/ApplicationSelectInstit
 function CreateForm() {
   
   let [form, setForm] = useState(1);
+  let [fields, setFields] = useState(['Name', 'Email', 'Phone Number', 'CGPA']);
 
   let clickNext = () => {
     setForm(prev => prev+1);
@@ -23,7 +24,7 @@ function CreateForm() {
     <div>
       {
         form == 1 ? <ApplicationDetailsForm next={clickNext} /> : 
-        form == 2 ? <ApplicationCreateForm next={clickNext} prev={clickPrev}/> :
+        form == 2 ? <ApplicationCreateForm next={clickNext} prev={clickPrev} fields={fields} setFields={setFields} /> :
         form == 3 ? <ApplicationSelectInstitutions submit={clickSubmit} prev={clickPrev}/> :
         <></>
       }

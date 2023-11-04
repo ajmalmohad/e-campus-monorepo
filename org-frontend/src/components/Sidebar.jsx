@@ -13,7 +13,7 @@ function Sidebar() {
           <div className='flex px-2 pb-4 items-center'><img src={Logo} className='h-[30px]'/></div>
           <div className='py-2 bg-blue'>
               <Link to="/"><div className='cursor-pointer flex items-center p-4 rounded hover:bg-[#695dff] hover:text-white font-medium'> <AiFillHome className='mr-2'/>Dashboard</div></Link>
-              <Link to="/create-job"><div className='cursor-pointer flex items-center p-4 rounded hover:bg-[#695dff] hover:text-white font-medium'> <IoIosCreate className='mr-2'/>Create Application</div></Link>
+              <Link to="/create-job"><div className='cursor-pointer flex items-center p-4 rounded hover:bg-[#695dff] hover:text-white font-medium'> <IoIosCreate className='mr-2'/>Create Job Opening</div></Link>
               <Link to="/profile"><div className='cursor-pointer flex items-center p-4 rounded hover:bg-[#695dff] hover:text-white font-medium'> <BiSolidUser className='mr-2'/>Profile</div></Link>
           </div>
         </div>
