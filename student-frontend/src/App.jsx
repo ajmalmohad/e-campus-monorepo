@@ -3,14 +3,19 @@ import { Route, Routes } from 'react-router-dom'
 import StudentDashboard from './pages/StudentDashboard'
 import NotFound from './pages/NotFound'
 import AccessChecker from './components/AccessChecker'
+import Templated from './components/Templated'
+import Placements from './pages/Placements'
+import Profile from './pages/Profile'
 
 function App() {
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<AccessChecker><StudentDashboard /></AccessChecker>}/> :
-        <Route path='/not-found' element={<NotFound />}/>
+        <Route path='/' element={<AccessChecker><Templated><StudentDashboard /></Templated></AccessChecker>}/>
+        <Route path='/placements' element={<AccessChecker><Templated><Placements /></Templated></AccessChecker>}/>
+        <Route path='/profile' element={<AccessChecker><Templated><Profile /></Templated></AccessChecker>}/>
+        <Route path='*' element={<NotFound />}/>
       </Routes>
     </>
   )

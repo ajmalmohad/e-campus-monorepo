@@ -17,7 +17,7 @@ function App() {
         <Route path='/create-job' element={<AccessChecker><Templated><CreateForm /></Templated></AccessChecker>}/>
         <Route path='/profile' element={<AccessChecker><Templated><Profile /></Templated></AccessChecker>}/>
         <Route path='/view-applications/:jobId' element={<AccessChecker><Templated><ViewApplications /></Templated></AccessChecker>}/>
-        <Route path='/not-found' element={<NotFound />}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </>
   )
