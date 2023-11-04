@@ -1,13 +1,17 @@
-import { useState } from 'react'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import StudentDashboard from './pages/StudentDashboard'
+import NotFound from './pages/NotFound'
+import AccessChecker from './components/AccessChecker'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      {count}
-      <button onClick={()=>{setCount(prev=>prev+1)}}>Add</button>
+      <Routes>
+        <Route path='/' element={<AccessChecker access="student"><StudentDashboard /></AccessChecker>}/>
+        <Route path='/not-found' element={<NotFound />}/>
+      </Routes>
     </>
   )
 }
