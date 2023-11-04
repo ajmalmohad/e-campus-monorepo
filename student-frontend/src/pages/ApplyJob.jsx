@@ -26,7 +26,7 @@ function ApplyJob() {
     <div>
     {
       form == 1 ? <ApplicationDetails next={clickNext} /> : 
-      form == 2 ? <ApplicationForm submit={clickSubmit} prev={clickPrev} fields={fields} setFields={setFields} /> :
+      form == 2 ? <ApplicationForm submit={clickSubmit} prev={clickPrev} fields={fields} data={{"name": "Ajmal Moha'd", "email":"Pikachu@thunderbolt.com", "phonenumber": "+1 4206923329", "cgpa": "10"}} /> :
       <></>
     }
     </div>

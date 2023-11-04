@@ -2,25 +2,9 @@ import React, { useState } from 'react'
 import {Button} from '@nextui-org/react'
 import {Input} from "@nextui-org/react";
 import { Divider } from '@mui/material';
-import {GrClose} from 'react-icons/gr';
-import {AiOutlinePlus} from 'react-icons/ai'
 
-function ApplicationForm({ submit, prev, fields, setFields }) {
+function ApplicationForm({ submit, prev, fields, data }) {
 
-    let [ newField, setNewField ] = useState("");
-
-    let deleteField = (current) => {
-        console.log(current);
-        let newFields = fields.filter((item)=>{ return item !== current });
-        setFields(newFields);
-    }
-
-    let addField = (current) => {
-        if(current !== "") {
-            setFields([...fields, current]);
-            setNewField("");
-        }
-    }
 
   return (
     <div>
@@ -28,22 +12,18 @@ function ApplicationForm({ submit, prev, fields, setFields }) {
         <br/><Divider />
         <div className='pt-4 px-4'>
             <div>
+                { console.log(data) }
                 {
                     fields.map((item) => {
                        return <div className='flex py-2 items-center gap-2' key={item}>
-                            <Input type='text' label={item} />
-                            <div size='lg' className='rounded-full' onClick={()=>{deleteField(item)}}><GrClose /></div>
+                            <Input type='text' defaultValue={data[item.toLowerCase().split(" ").join("")]} label={item} />
                        </div>
                     })
                 }
             </div>
-            <div className='flex py-4 gap-4 items-center'>
-                <Input type='text' label="New Field Name" value={newField} onChange={(e)=>{setNewField(e.target.value)}}/>
-                <div className='text-xl cursor-pointer' onClick={()=>{addField(newField)}}><AiOutlinePlus /></div>
-            </div>
-            <div className='flex gap-4'>
+            <div className='flex gap-4 mt-2'>
                 <Button onClick={prev}>Prev</Button>
-                <Button onClick={submit}>Submit</Button>
+                <Button color='success' onClick={submit}>Submit</Button>
             </div>
         </div>
     </div>
