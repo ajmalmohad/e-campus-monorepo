@@ -8,8 +8,8 @@ function ViewApplications({}) {
   console.log(params.jobId);
   let [current, setCurrent] = useState(1);
   let [accepted, setAccepted] = useState(['Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal']);
-  let [rejected, setRejected] = useState(['Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal']);
-  let [waitinglist, setWaiting] = useState(['Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal']);
+  let [rejected, setRejected] = useState(['John', 'John', 'John', 'John', 'John', 'John', 'John', 'John']);
+  let [waitinglist, setWaiting] = useState(['Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja']);
 
   let changeList = (current) => {
         setCurrent(current);
@@ -18,13 +18,13 @@ function ViewApplications({}) {
   return (
     <div>
         <ButtonGroup className='w-full'>
-            <Button color="success">Accepted</Button>
-            <Button color='danger'>Rejected</Button>
-            <Button color='warning'>Waiting List</Button>
+            <Button onClick={()=>{setCurrent(1)}}>Accepted</Button>
+            <Button onClick={()=>{setCurrent(2)}}>Rejected</Button>
+            <Button onClick={()=>{setCurrent(3)}}>Waiting List</Button>
         </ButtonGroup>
         <div className='py-4'>
             {
-                current === 1 ? <div>
+                current === 1 ? <div className='border solid rounded-xl'>
                     <div>
                         <div className='py-4 flex w-full'>
                             <p className='flex-1 flex w-full justify-center'>Name</p>
@@ -46,7 +46,7 @@ function ViewApplications({}) {
                         })
                     }
                 </div> :
-                current === 2 ? <div>
+                current === 2 ? <div className='border solid rounded-xl'>
                      <div>
                         <div className='py-4 flex w-full'>
                             <p className='flex-1 flex w-full justify-center'>Name</p>
@@ -56,11 +56,11 @@ function ViewApplications({}) {
                         <Divider/>
                     </div>
                     {
-                        accepted.map((item, idx) => {
+                        rejected.map((item, idx) => {
                             return <div>
                                 <div key={item+idx} className='py-4 flex w-full'>
                                     <p className='flex-1 flex w-full justify-center'>{item}</p>
-                                    <p className='flex-1 flex w-full justify-center'>ajmal@gmail.com</p>
+                                    <p className='flex-1 flex w-full justify-center'>john@gmail.com</p>
                                     <div className='flex-1 flex w-full justify-center'><Chip>Jyothi Engineering College</Chip></div>
                                 </div>
                                 <Divider/>
@@ -68,7 +68,7 @@ function ViewApplications({}) {
                         })
                     }
                 </div> :
-                current === 3 ? <div>
+                current === 3 ? <div className='border solid rounded-xl'>
                      <div>
                         <div className='py-4 flex w-full'>
                             <p className='flex-1 flex w-full justify-center'>Name</p>
@@ -78,11 +78,11 @@ function ViewApplications({}) {
                         <Divider/>
                     </div>
                     {
-                        accepted.map((item, idx) => {
+                        waitinglist.map((item, idx) => {
                             return <div>
                                 <div key={item+idx} className='py-4 flex w-full'>
                                     <p className='flex-1 flex w-full justify-center'>{item}</p>
-                                    <p className='flex-1 flex w-full justify-center'>ajmal@gmail.com</p>
+                                    <p className='flex-1 flex w-full justify-center'>lamja@gmail.com</p>
                                     <div className='flex-1 flex w-full justify-center'><Chip>Jyothi Engineering College</Chip></div>
                                 </div>
                                 <Divider/>

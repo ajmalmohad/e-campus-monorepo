@@ -1,8 +1,15 @@
 import React from 'react'
+import ProfileCard from '../components/ProfileCard'
+import Search from './../components/Search'
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <div>
+      <Search className="w-full"/>
+      <div className='pt-4'>
+        <ProfileCard />
+      </div>
+    </div>
   )
 }
 
