@@ -1,5 +1,6 @@
 import React from "react";
 import {Card, CardHeader, CardBody, CardFooter, Divider, Button, Image, Chip} from "@nextui-org/react";
+import {Link} from 'react-router-dom';
 
 export default function JobCard({ icon, name, publishdate, description, status }) {
   return (
@@ -28,9 +29,9 @@ export default function JobCard({ icon, name, publishdate, description, status }
       </CardBody>
       <Divider/>
       <CardFooter className="bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-        <Button className="text-tiny" variant="bordered" size="sm">
+        <Link to="/view-applications/x"><Button className="text-tiny" variant="bordered" size="sm">
           View
-        </Button>
+        </Button></Link>
         <Button className="text-tiny" variant="bordered" color="danger" size="sm">
           Delete
         </Button>

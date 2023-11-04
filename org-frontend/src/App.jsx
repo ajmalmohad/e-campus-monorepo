@@ -6,6 +6,7 @@ import AccessChecker from './components/AccessChecker'
 import Templated from './components/Templated'
 import Profile from './pages/Profile'
 import CreateForm from './pages/CreateForm'
+import ViewApplications from './pages/ViewApplications'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<AccessChecker><Templated><OrganizationDashboard /></Templated></AccessChecker>}/>
         <Route path='/create-job' element={<AccessChecker><Templated><CreateForm /></Templated></AccessChecker>}/>
         <Route path='/profile' element={<AccessChecker><Templated><Profile /></Templated></AccessChecker>}/>
+        <Route path='/view-applications/:jobId' element={<AccessChecker><Templated><ViewApplications /></Templated></AccessChecker>}/>
         <Route path='/not-found' element={<NotFound />}/>
       </Routes>
     </>
