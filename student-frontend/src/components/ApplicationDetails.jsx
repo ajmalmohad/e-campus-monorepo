@@ -2,14 +2,11 @@ import React from 'react'
 import {Button} from '@nextui-org/react'
 import {Divider, Input} from '@nextui-org/react'
 import {Textarea} from "@nextui-org/react"
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 
 function ApplicationDetails({ next }) {
   return (
     <div>
-        <br/><h1 className='text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight'>Application Details</h1>
+        <br/><h1 className='text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight'>Instagram Placement Details</h1>
         <br/><Divider />
         <div className='pt-4'>
             <Input disabled value={"Front End Developer"} className='pt-2 pb-4' labelPlacement="outside" type="text" label="Job Title" placeholder="Enter the job title" />
