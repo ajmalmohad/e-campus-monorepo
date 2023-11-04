@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<AccessChecker><OrganizationDashboard /></AccessChecker>}/> 
+        <Route path='/' element={<AccessChecker><OrganizationDashboard /></AccessChecker>}/> :
         <Route path='/not-found' element={<NotFound />}/>
       </Routes>
     </>
