@@ -30,12 +30,9 @@ export default function JobCard({ icon, name, publishdate, description, status }
       </CardBody>
       <Divider/>
       <CardFooter className="bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-        <Button className="text-tiny" variant="bordered" size="sm">
-          View
-        </Button>
-        <Button className="text-tiny" variant="bordered" color="success" size="sm">
+        <Link to={`/apply-job/${name}`}><Button className="text-tiny" variant="bordered" color="success" size="sm">
           Apply
-        </Button>
+        </Button></Link>
       </CardFooter>
     </Card>
   );
