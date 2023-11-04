@@ -2,10 +2,12 @@ import React, {useState} from 'react'
 import ApplicationDetails from '../components/ApplicationDetails';
 import ApplicationForm from '../components/ApplicationForm';
 import  {useParams} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function ApplyJob() {
   let params = useParams();
   console.log(params.job);
+  let navigate = useNavigate();
 
   let [form, setForm] = useState(1);
   let [fields, setFields] = useState(['Name', 'Email', 'Phone Number', 'CGPA']);
@@ -20,6 +22,7 @@ function ApplyJob() {
 
   let clickSubmit = () => {
     console.log("Success");
+    navigate('/placements');
   }
 
   return (
