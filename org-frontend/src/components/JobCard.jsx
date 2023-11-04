@@ -15,7 +15,7 @@ export default function JobCard({ icon, name, publishdate, description, status }
             />
             <div className="flex flex-col">
             <p className="text-md">{name}</p>
-            <p className="text-small text-default-500">{publishdate}</p>
+            <p className="text-small text-default-500">Deadline: {publishdate}</p>
             </div>
         </div>
         {status==="active" ? <Chip color="success" variant="solid">Active</Chip>: ""}
