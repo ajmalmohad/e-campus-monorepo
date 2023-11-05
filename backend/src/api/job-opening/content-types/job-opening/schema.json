@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_openings",
+  "info": {
+    "singularName": "job-opening",
+    "pluralName": "job-openings",
+    "displayName": "Job Opening",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "jobTitle": {
+      "type": "string",
+      "required": false
+    },
+    "jobDescription": {
+      "type": "text"
+    },
+    "roundDetails": {
+      "type": "text"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "applicationForm": {
+      "type": "json"
+    },
+    "organizationID": {
+      "type": "string"
+    },
+    "selectedInstitutes": {
+      "type": "text"
+    }
+  }
+}

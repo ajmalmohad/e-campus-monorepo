@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "candidateName": {
+      "type": "string"
+    },
+    "candidateEmail": {
+      "type": "email"
+    },
+    "candidatePhone": {
+      "type": "string"
+    },
+    "candidateCGPA": {
+      "type": "float"
+    }
+  }
+}
