@@ -23,12 +23,17 @@ function OrganizationDashboard() {
             selectedColleges: item.attributes.selectedCollegeIds,
           } : undefined
         })
-        setJobPostings(data);
+
+        const sortedDesc = data.sort(
+          (objA, objB) => Number(new Date(objB.deadline)) - Number(new Date(objA.deadline)),
+        );
+
+        setJobPostings(sortedDesc);
       })
     }).catch((err) =>{
       console.log(err);
     })
-  }, [])
+  }, []);
 
   return (
     <div>

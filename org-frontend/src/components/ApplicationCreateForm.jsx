@@ -31,7 +31,7 @@ function ApplicationCreateForm({ next, prev, fields, setFields }) {
                 {
                     fields.map((item) => {
                        return <div className='flex py-2 items-center gap-2' key={item}>
-                            <Input type='text' label={item} />
+                            <Input disabled type='text' label={item} />
                             <div size='lg' className='rounded-full' onClick={()=>{deleteField(item)}}><GrClose /></div>
                        </div>
                     })
