@@ -19,7 +19,7 @@ We have two types of users - each have it's own frontend. There are companies wh
 
 
 # Embed video of project demo
-(https://youtu.be/67J-c2N17hM)[YouTube Video]
+[YouTube Video](https://youtu.be/67J-c2N17hM)
 
 
 # Technologies used
