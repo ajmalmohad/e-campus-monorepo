@@ -3,8 +3,12 @@ import Search from '../components/Search'
 import {Chip} from "@nextui-org/react";
 import JobCard from '../components/JobCard';
 import Logo from './../assets/CompanyLogo.jpg'
+import { useState } from 'react';
 
 function OrganizationDashboard() {
+
+  let [jobPostings, setJobPostings] = useState([]);
+
   return (
     <div>
       <div>
