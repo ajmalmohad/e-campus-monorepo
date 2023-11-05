@@ -20,8 +20,8 @@ export const CustomCheckbox = ({ user, statusColor, value }) => {
         <User
           avatarProps={{ size: "md", src: user.avatar }}
           description={
-            <Link isExternal href={user.url} size="sm">
-              @{user.username}
+            <Link isExternal href={`mailto:${user.email}`} size="sm">
+              {user.email}
             </Link>
           }
           name={user.name}
