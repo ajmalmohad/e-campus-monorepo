@@ -11,17 +11,23 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "candidateName": {
+    "name": {
       "type": "string"
     },
-    "candidateEmail": {
+    "email": {
       "type": "email"
     },
-    "candidatePhone": {
+    "phone": {
       "type": "string"
     },
-    "candidateCGPA": {
+    "cgpa": {
       "type": "float"
+    },
+    "collegeId": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
     }
   }
 }

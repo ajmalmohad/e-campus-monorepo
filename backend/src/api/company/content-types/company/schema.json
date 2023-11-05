@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string"
+    },
+    "companyMail": {
+      "type": "email"
+    },
+    "companyDescription": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    }
+  }
+}

@@ -11,21 +11,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "jobOpeningID": {
+    "jobOpeningId": {
       "type": "string"
     },
-    "studentID": {
+    "studentId": {
       "type": "string"
-    },
-    "formDetails": {
-      "type": "json"
     },
     "status": {
       "type": "enumeration",
       "enum": [
         "accepted",
         "rejected",
-        "waiting"
+        "waitlist"
       ]
     }
   }

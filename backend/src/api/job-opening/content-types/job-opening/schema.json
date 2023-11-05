@@ -4,17 +4,18 @@
   "info": {
     "singularName": "job-opening",
     "pluralName": "job-openings",
-    "displayName": "Job Opening",
-    "description": ""
+    "displayName": "Job Opening"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+    "companyId": {
+      "type": "string"
+    },
     "jobTitle": {
-      "type": "string",
-      "required": false
+      "type": "string"
     },
     "jobDescription": {
       "type": "text"
@@ -23,16 +24,13 @@
       "type": "text"
     },
     "deadline": {
-      "type": "datetime"
+      "type": "date"
     },
-    "applicationForm": {
+    "formFields": {
       "type": "json"
     },
-    "organizationID": {
-      "type": "string"
-    },
-    "selectedInstitutes": {
-      "type": "text"
+    "selectedCollegeIds": {
+      "type": "json"
     }
   }
 }

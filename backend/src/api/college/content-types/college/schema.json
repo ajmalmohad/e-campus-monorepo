@@ -4,7 +4,8 @@
   "info": {
     "singularName": "college",
     "pluralName": "colleges",
-    "displayName": "College"
+    "displayName": "College",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,11 +15,11 @@
     "collegeName": {
       "type": "string"
     },
-    "collegeEmail": {
-      "type": "string"
+    "collegeMail": {
+      "type": "email"
     },
-    "listOfStudents": {
-      "type": "text"
+    "tier": {
+      "type": "integer"
     }
   }
 }

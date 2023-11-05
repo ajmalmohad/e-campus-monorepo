@@ -688,10 +688,9 @@ export interface ApiApplicationApplication extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    jobOpeningID: Attribute.String;
-    studentID: Attribute.String;
-    formDetails: Attribute.JSON;
-    status: Attribute.Enumeration<['accepted', 'rejected', 'waiting']>;
+    jobOpeningId: Attribute.String;
+    studentId: Attribute.String;
+    status: Attribute.Enumeration<['accepted', 'rejected', 'waitlist']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -716,14 +715,15 @@ export interface ApiCollegeCollege extends Schema.CollectionType {
     singularName: 'college';
     pluralName: 'colleges';
     displayName: 'College';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     collegeName: Attribute.String;
-    collegeEmail: Attribute.String;
-    listOfStudents: Attribute.Text;
+    collegeMail: Attribute.Email;
+    tier: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -735,6 +735,39 @@ export interface ApiCollegeCollege extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::college.college',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCompanyCompany extends Schema.CollectionType {
+  collectionName: 'companies';
+  info: {
+    singularName: 'company';
+    pluralName: 'companies';
+    displayName: 'Company';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Attribute.String;
+    companyMail: Attribute.Email;
+    companyDescription: Attribute.Text;
+    password: Attribute.Password;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::company.company',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::company.company',
       'oneToOne',
       'admin::user'
     > &
@@ -748,19 +781,18 @@ export interface ApiJobOpeningJobOpening extends Schema.CollectionType {
     singularName: 'job-opening';
     pluralName: 'job-openings';
     displayName: 'Job Opening';
-    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    companyId: Attribute.String;
     jobTitle: Attribute.String;
     jobDescription: Attribute.Text;
     roundDetails: Attribute.Text;
-    deadline: Attribute.DateTime;
-    applicationForm: Attribute.JSON;
-    organizationID: Attribute.String;
-    selectedInstitutes: Attribute.Text;
+    deadline: Attribute.Date;
+    formFields: Attribute.JSON;
+    selectedCollegeIds: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -772,39 +804,6 @@ export interface ApiJobOpeningJobOpening extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::job-opening.job-opening',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiOrganizationOrganization extends Schema.CollectionType {
-  collectionName: 'organizations';
-  info: {
-    singularName: 'organization';
-    pluralName: 'organizations';
-    displayName: 'Organization';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    organizationName: Attribute.String;
-    organizationEmail: Attribute.Email;
-    organizationDescription: Attribute.Text;
-    organizationPhone: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::organization.organization',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::organization.organization',
       'oneToOne',
       'admin::user'
     > &
@@ -823,10 +822,12 @@ export interface ApiStudentStudent extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    candidateName: Attribute.String;
-    candidateEmail: Attribute.Email;
-    candidatePhone: Attribute.String;
-    candidateCGPA: Attribute.Float;
+    name: Attribute.String;
+    email: Attribute.Email;
+    phone: Attribute.String;
+    cgpa: Attribute.Float;
+    collegeId: Attribute.String;
+    password: Attribute.Password;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -863,8 +864,8 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::application.application': ApiApplicationApplication;
       'api::college.college': ApiCollegeCollege;
+      'api::company.company': ApiCompanyCompany;
       'api::job-opening.job-opening': ApiJobOpeningJobOpening;
-      'api::organization.organization': ApiOrganizationOrganization;
       'api::student.student': ApiStudentStudent;
     }
   }
