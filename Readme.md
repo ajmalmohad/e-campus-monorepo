@@ -32,9 +32,7 @@ We have two types of users - each have it's own frontend. There are companies wh
 
 # How to configure
 
-# Project Setup
-
-## Folder Structure
+### Folder Structure
 
 This project is structured into three main folders:
 
@@ -44,7 +42,7 @@ This project is structured into three main folders:
 
 Follow the instructions below to set up and run each part of the project.
 
-## Backend Setup
+### Backend Setup
 
 1. Navigate to the `backend` folder:
 ```
@@ -61,7 +59,7 @@ npm install
 npm run develop
 ```
 
-## Company Frontend Setup
+### Company Frontend Setup
 
 1. Navigate to the `org-frontend` folder:
 
@@ -79,7 +77,7 @@ npm install
 npm run dev
 ```
 
-## Student Frontend Setup
+### Student Frontend Setup
 
 1. Navigate to the `student-frontend` folder:
 ```
