@@ -3,13 +3,27 @@ import {Button, ButtonGroup, Chip} from "@nextui-org/react";
 import {useParams} from 'react-router-dom'
 import { Divider } from '@mui/material';
 
+const generateRandomData = (count) => {
+    const data = [];
+    const names = ['Ajmal', 'John', 'Lamja', 'Alice', 'Bob', 'Charlie', 'David', 'Eva'];
+    const colleges = ['College A', 'College B', 'College C'];
+    
+    for (let i = 0; i < count; i++) {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      const randomEmail = `${randomName.toLowerCase()}@example.com`;
+      const randomCollege = colleges[Math.floor(Math.random() * colleges.length)];
+      data.push({ name: randomName, email: randomEmail, college: randomCollege });
+    }
+    return data;
+};
+
 function ViewApplications({}) {
   let params = useParams();
   console.log(params.jobId);
   let [current, setCurrent] = useState(1);
-  let [accepted, setAccepted] = useState(['Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal', 'Ajmal']);
-  let [rejected, setRejected] = useState(['John', 'John', 'John', 'John', 'John', 'John', 'John', 'John']);
-  let [waitinglist, setWaiting] = useState(['Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja', 'Lamja']);
+  let [accepted, setAccepted] = useState(generateRandomData(15));
+  let [rejected, setRejected] = useState(generateRandomData(15));
+  let [waitinglist, setWaiting] = useState(generateRandomData(15));
 
   let changeList = (current) => {
         setCurrent(current);
@@ -37,9 +51,9 @@ function ViewApplications({}) {
                         accepted.map((item, idx) => {
                             return <div>
                                 <div key={item+idx} className='py-4 flex w-full'>
-                                    <p className='flex-1 flex w-full justify-center'>{item}</p>
-                                    <p className='flex-1 flex w-full justify-center'>ajmal@gmail.com</p>
-                                    <div className='flex-1 flex w-full justify-center'><Chip>Jyothi Engineering College</Chip></div>
+                                    <p className='flex-1 flex w-full justify-center'>{item.name}</p>
+                                    <p className='flex-1 flex w-full justify-center'>{item.email}</p>
+                                    <div className='flex-1 flex w-full justify-center'><Chip>{item.college}</Chip></div>
                                 </div>
                                 <Divider/>
                             </div>
@@ -59,9 +73,9 @@ function ViewApplications({}) {
                         rejected.map((item, idx) => {
                             return <div>
                                 <div key={item+idx} className='py-4 flex w-full'>
-                                    <p className='flex-1 flex w-full justify-center'>{item}</p>
-                                    <p className='flex-1 flex w-full justify-center'>john@gmail.com</p>
-                                    <div className='flex-1 flex w-full justify-center'><Chip>Jyothi Engineering College</Chip></div>
+                                    <p className='flex-1 flex w-full justify-center'>{item.name}</p>
+                                    <p className='flex-1 flex w-full justify-center'>{item.email}</p>
+                                    <div className='flex-1 flex w-full justify-center'><Chip>{item.college}</Chip></div>
                                 </div>
                                 <Divider/>
                             </div>
@@ -81,9 +95,9 @@ function ViewApplications({}) {
                         waitinglist.map((item, idx) => {
                             return <div>
                                 <div key={item+idx} className='py-4 flex w-full'>
-                                    <p className='flex-1 flex w-full justify-center'>{item}</p>
-                                    <p className='flex-1 flex w-full justify-center'>lamja@gmail.com</p>
-                                    <div className='flex-1 flex w-full justify-center'><Chip>Jyothi Engineering College</Chip></div>
+                                    <p className='flex-1 flex w-full justify-center'>{item.name}</p>
+                                    <p className='flex-1 flex w-full justify-center'>{item.email}</p>
+                                    <div className='flex-1 flex w-full justify-center'><Chip>{item.college}</Chip></div>
                                 </div>
                                 <Divider/>
                             </div>
